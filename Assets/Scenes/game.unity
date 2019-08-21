@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 4191746494143145847, guid: 86bfbdabb09e2254ea691dd19d3d7c90,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4191746494143145846, guid: 86bfbdabb09e2254ea691dd19d3d7c90,
         type: 3}
@@ -514,6 +514,7 @@ MonoBehaviour:
   canva: {fileID: 1657361706}
   finalTimeStr: 
   playerName: 
+  difficulty: 
 --- !u!4 &1052444348
 Transform:
   m_ObjectHideFlags: 0

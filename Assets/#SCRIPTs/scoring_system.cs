@@ -10,6 +10,7 @@ public class scoring_system : MonoBehaviour
     public Canvas canva;
     public string finalTimeStr;
     public string playerName;
+    public string difficulty;
 
     private float startTime;
     private GameObject rightHand;
@@ -29,10 +30,14 @@ public class scoring_system : MonoBehaviour
             startTime = Time.time;
             StartCoroutine(timer());
             rightHand = GameObject.Find("RightControllerAnchor");
+
             canva.transform.parent = rightHand.transform;
             canva.transform.localPosition = Vector3.zero;
             canva.transform.localRotation = Quaternion.identity;
+
             playerName = GameObject.FindGameObjectWithTag("Player").transform.name;
+
+            difficulty = GameObject.Find("menuCapsule").GetComponent<menu_capsule>().difficulty;
 
         }
 

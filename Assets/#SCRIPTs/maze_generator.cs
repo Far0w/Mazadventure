@@ -40,16 +40,14 @@ public class maze_generator : MonoBehaviour {
         // Centre relatif : utile pour la construction des murs et des cases
         center[0] = (mazeSize * caseSize / 2);
         center[1] = (mazeSize * caseSize / 2);
-		//sol
 		buildGround ();
-		//construction murs
 		buildWalls();
         entryAndExit();
         if (enableBeams) {
             StartCoroutine(buildBeams());
         }
         StartCoroutine(buildCases()); //S'occupe de la création des cubes de destruction qui gère une case
-        //Génération du labyrinthe
+
         StartCoroutine(buildMaze());
 
         //Pour exécution après la fin de génération de la map voir void whenGenerated
@@ -74,7 +72,7 @@ public class maze_generator : MonoBehaviour {
 
         playerName = menuCapsule.playerName;
 
-        string lvl = menuCapsule.getLevel();
+        string lvl = menuCapsule.difficulty; // lvl = difficulty
         switch (lvl)
         {
             case "easy":

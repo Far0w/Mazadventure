@@ -13,46 +13,11 @@ public class menu_capsule : MonoBehaviour
     public bool Expert = false;
     public bool Supereasy = false;
 
+    public string difficulty;
+
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    public void selectLevel(string level)
-    {
-        Easy = false;
-        Medium = false;
-        Expert = false;
-        Supereasy = false;
-
-        switch (level)
-        {
-            case "easy":
-                Easy = true;
-                break;
-            case "medium":
-                Medium = true;
-                break;
-            case "expert":
-                Expert = true;
-                break;
-            case "supereasy":
-                Supereasy = true;
-                break;
-        }
-    }
-
-    public string getLevel()
-    {
-        if (Easy)
-            return "easy";
-        if (Medium)
-            return "medium";
-        if (Expert)
-            return "expert";
-        if (Supereasy)
-            return "supereasy";
-        return "";
     }
 
 

@@ -55,7 +55,7 @@ public class menu_manager : MonoBehaviour
         debugText2.text = "CLOK";  
         if (button.StartsWith("selectLevel")){
             string levelReceived = (button.Substring(11)).ToLower(); // Enlève "selectLevel" puis met en minuscule
-            levelSelector.selectLevel(levelReceived);
+            levelSelector.difficulty = levelReceived;
             isLevelSelected = true;
         }
         else if (button == "launch" && isLevelSelected)
