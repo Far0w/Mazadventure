@@ -27,7 +27,7 @@ public class success_script : MonoBehaviour
         playerNameText.text = scoreSyst.playerName;
 
         //print("scoreSyst.finalTimeStr" + scoreSyst.finalTimeStr);
-
+        //ok
         successMess.text = successMess.text + scoreSyst.finalTimeStr + " !";
 
         Destroy(scoreSyst);
