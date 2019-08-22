@@ -39,6 +39,8 @@ public class scoring_system : MonoBehaviour
 
             difficulty = GameObject.Find("menuCapsule").GetComponent<menu_capsule>().difficulty;
 
+            Destroy(GameObject.Find("menuCapsule"));
+
         }
 
         else if (!isOver) // Si on le gameObject est là just pour test

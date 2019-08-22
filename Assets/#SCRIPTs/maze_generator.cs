@@ -59,7 +59,7 @@ public class maze_generator : MonoBehaviour {
         spawnPlayer();
         spawnTorch();
 
-        Destroy(menuCapsule); // Nécessaire pour ne pas avoir plusieurs levelSelector si le joueur joue plusieurs parties
+        //Destroy(menuCapsule); // Nécessaire pour ne pas avoir plusieurs levelSelector si le joueur joue plusieurs parties
     }
 
 
