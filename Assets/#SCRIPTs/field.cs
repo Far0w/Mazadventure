@@ -9,11 +9,12 @@ public class field : MonoBehaviour
     public Text fieldText;
     public Image imageField;
     public Component fieldScript;
+    public Text debugText4;
 
 
     void Start()
     {
-        fieldText.text = text;
+        //fieldText.text = text;
     }
 
     public void enterText(string txt) //Dès que le text est entré par l'utilisateur via le clavier
@@ -22,6 +23,7 @@ public class field : MonoBehaviour
         text = txt;
         fieldText.text = txt;
         fieldScript.SendMessage("fieldUpdated");
+        debugText4.text = "field.cs : Field updated, text = " + text;
 
     }
 

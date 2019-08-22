@@ -19,6 +19,7 @@ public class playerNameField_script : MonoBehaviour
 
     void fieldUpdated() // This function is executed when the field is updated via a SendMessage
     {
-        menuCapsule.playerName = fieldText;
+        fieldText = fieldPN.text;
+        menuCapsule.updatePlayerName(fieldText);
     }
 }

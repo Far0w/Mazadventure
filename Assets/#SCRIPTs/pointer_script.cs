@@ -49,7 +49,7 @@ public class pointer_script : MonoBehaviour
         {
             endPosition = hit.point;
 
-            if (hit.collider.gameObject.name.Contains("_c") ) // Si c'est un bouton du clavier
+            if (hit.collider.gameObject.name.Contains("_c")) // If the collider belong to the keyboard
             {
                 //print("pointer on key" + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name.Length == 3)
@@ -85,7 +85,7 @@ public class pointer_script : MonoBehaviour
 
                 if (lastState == false)
                 {
-                    if (hit.collider.gameObject.name.Contains("_c")) // if the collider belong to the keyboard
+                    if (hit.collider.gameObject.name.Contains("_c")) // If the collider belong to the keyboard
                     {
                         if (hit.collider.gameObject.name.Length == 3)
                         {

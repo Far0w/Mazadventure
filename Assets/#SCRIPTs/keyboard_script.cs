@@ -7,12 +7,12 @@ public class keyboard_script : MonoBehaviour
 {
     public string typedText;
     public Text typedTextGO;
-    public field selectedField; // Champ à remplir
+    public field selectedField; // If there are multiple fields in the scene
 
     private string[] keys = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_", "Enter", "Clear", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-    private GameObject[] keysGO; //Les gameObjects des touches, c'est à dire des lettres en blanc qui seront activé au survol des touches du clavier.
+    private GameObject[] keysGO; // Keys GameObject, those that are white, that appears when the pointer hovering a key 
     private GameObject kbColliders;
-    private int activeKey; //index de la touche active
+    private int activeKey; // Index of the active touch in the keys array
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class keyboard_script : MonoBehaviour
             keysGO[i] = GameObject.Find(keyToDisable);
             keysGO[i].SetActive(false);
         }
-        typedText = "Nothing here";
+        typedText = "";
         updateText();
         StartCoroutine(clearEntireKeys());
     }
@@ -69,7 +69,7 @@ public class keyboard_script : MonoBehaviour
 
     public void closeKeyboard()
     {
-        //On désactive le canvas et les colliders
+        // Disabling canvas and colliders associated to keys
         kbColliders.SetActive(false);
         transform.GetComponent<Canvas>().enabled = false;
         transform.GetComponent<CanvasScaler>().enabled = false;
@@ -78,7 +78,7 @@ public class keyboard_script : MonoBehaviour
 
     public void openKeyboard()
     {
-        //On désactive le canvas et les colliders
+        // Enabling canvas and colliders associated to keys
         kbColliders.SetActive(true);
         transform.GetComponent<Canvas>().enabled = true;
         transform.GetComponent<CanvasScaler>().enabled = true;
@@ -87,7 +87,7 @@ public class keyboard_script : MonoBehaviour
 
     public void clickOnKey(string keyName)
     {
-        if(keyName.Length == 1 && typedText.Length <= 16)
+        if(keyName.Length == 1 && typedText.Length <= 16) // Trigger a normal key touch (number, letter or _)
         {
             typedText += keyName;
             updateText();
