@@ -44,10 +44,14 @@ public class scoring_system : MonoBehaviour
         else if (!isOver) // Si on le gameObject est là just pour test
         {
             isOver = true;
-            finalTime = 61;
-            mins = 1;
-            secs = 1;
-            finalTimeStr = doTimerText(mins, secs);
+            if (finalTimeStr == "")
+            {
+                finalTime = 61;
+                mins = 1;
+                secs = 1;
+                finalTimeStr = doTimerText(mins, secs);
+            }
+            
         }
 
         DontDestroyOnLoad(this.gameObject);
