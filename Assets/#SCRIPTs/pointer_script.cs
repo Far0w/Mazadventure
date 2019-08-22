@@ -10,11 +10,13 @@ public class pointer_script : MonoBehaviour
     public GameObject dot;
     public GameObject menuManager;
     public keyboard_script keyboard;
+    public leaderboard leaderboardManager;
 
 
     public Text debugText3;
 
     private LineRenderer lineRenderer = null;
+    private bool isKeyboardOpen = true;
     private field lastSelectedField;
     private bool lastState = false; //Etat : true si à la dernière frame le bouton était enfoncé , false sinon
 
@@ -30,9 +32,20 @@ public class pointer_script : MonoBehaviour
     {
         UpdateLine();
 
-        if (Input.GetButtonDown("Oculus_CrossPlatform_SecondaryThumbstick"))
+        if (Input.GetButtonDown("Oculus_CrossPlatform_PrimaryThumbstick"))
         {
-            keyboard.openKeyboard();
+            if (isKeyboardOpen)
+            {
+                keyboard.closeKeyboard();
+                isKeyboardOpen = false;
+            }
+
+            else
+            {
+                keyboard.openKeyboard();
+                isKeyboardOpen = true;
+            }
+                
         }
     }
 
@@ -96,6 +109,10 @@ public class pointer_script : MonoBehaviour
                             string[] splittedKeyName = hit.collider.gameObject.name.Split('_');
                             keyboard.clickOnKey(splittedKeyName[0]);
                         }
+                    }
+                    else if (hit.collider.tag == "leaderboard_collider")
+                    {
+                        leaderboardManager.changePage(hit.collider.name);
                     }
                     else // Sinon c'est un bouton du menu
                     {

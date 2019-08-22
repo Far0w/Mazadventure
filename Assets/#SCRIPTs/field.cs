@@ -12,11 +12,6 @@ public class field : MonoBehaviour
     public Text debugText4;
 
 
-    void Start()
-    {
-        //fieldText.text = text;
-    }
-
     public void enterText(string txt) //Dès que le text est entré par l'utilisateur via le clavier
     {
 

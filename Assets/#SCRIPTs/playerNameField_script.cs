@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerNameField_script : MonoBehaviour
 {
+    // S'occupe de la partie récupération du nom du joueur
 
     private field fieldPN;
     private string fieldText = "";
@@ -14,6 +15,17 @@ public class playerNameField_script : MonoBehaviour
         fieldPN = gameObject.GetComponent<field>();
         fieldText = fieldPN.text;
         menuCapsule = GameObject.Find("menuCapsule").GetComponent<menu_capsule>();
+
+        // Search if a playerNameCapsule is existing (if the player already played and played a game)
+        if (GameObject.Find("playerName_capsule") != null)
+        {
+            fieldPN.enterText(GameObject.Find("playerName_capsule").GetComponent<playerNameCapsule>().playerName);
+        }
+        else
+        {
+            print("No playerName capsule found");
+        }
+        Destroy(GameObject.Find("playerName_capsule"));
     }
 
 
