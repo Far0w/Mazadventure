@@ -1,5 +1,5 @@
 # MAZADVENTURE
-## Latest Version : v0.6.10
+#### Latest Version : v0.6.10
 
 ## What is it ?
 
