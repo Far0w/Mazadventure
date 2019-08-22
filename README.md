@@ -13,6 +13,7 @@ The keyboard system :
 <br>
 ![The keyboard system](https://github.com/Far0w/Mazadventure/blob/master/gameScreenshots/gif1.gif)
 <br>
+<br>
 The grabbing mechanism :
 <br>
 ![The grabbing system](https://github.com/Far0w/Mazadventure/blob/master/gameScreenshots/gif2.gif)
