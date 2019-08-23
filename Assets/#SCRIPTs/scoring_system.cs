@@ -11,6 +11,7 @@ public class scoring_system : MonoBehaviour
     public string finalTimeStr;
     public string playerName;
     public string difficulty;
+    public int finalTime;
 
     private float startTime;
     private GameObject rightHand;
@@ -18,7 +19,7 @@ public class scoring_system : MonoBehaviour
     private int mins;
     private int secs;
     private bool isOver = false;
-    private float finalTime;
+    
 
     IEnumerator Start()
     {

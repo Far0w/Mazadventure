@@ -12,6 +12,7 @@ public class leaderboard : MonoBehaviour
 
     public string leaderboardDifficulty = "";
 
+
     private string[] playerNames;
     private string[] scores;
     private int numberOfScoresByPage = 10;
@@ -19,17 +20,22 @@ public class leaderboard : MonoBehaviour
     private int numberOfAvailablePages = 0;
     private int currentPage = 0;
 
-    private const string dreamloPublicURL_Dev    = "http://dreamlo.com/lb/5d5828dee6a81b07f0bfa67a/pipe";
-    private const string dreamloPublicURL_Easy   = "";
-    private const string dreamloPublicURL_Hard   = "";
-    private const string dreamloPublicURL_Expert = "";
+    private const string dreamloPublicURL_SuperEasy    = "http://dreamlo.com/lb/5d5828dee6a81b07f0bfa67a/pipe";
+    private const string dreamloPublicURL_Easy   = "http://dreamlo.com/lb/5d5fa229e6a81b07f0eb25f5/pipe";
+    private const string dreamloPublicURL_Hard   = "http://dreamlo.com/lb/5d5fa3d9e6a81b07f0eb32bf/pipe";
+    private const string dreamloPublicURL_Expert = "http://dreamlo.com/lb/5d5fa45ae6a81b07f0eb35f1/pipe";
 
     private string dreamloPublicURL;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        dreamloPublicURL = dreamloPublicURL_Dev;
-        switch (leaderboardDifficulty)
+        yield return null;
+
+        dreamloPublicURL = dreamloPublicURL_SuperEasy;
+
+        yield return null;
+
+        switch (leaderboardDifficulty.ToLower())
         {
             case "easy":
                 dreamloPublicURL = dreamloPublicURL_Easy;

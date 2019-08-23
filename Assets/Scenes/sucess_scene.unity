@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &121555603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,9 +228,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
   canva: {fileID: 0}
-  finalTimeStr: 04:01
-  playerName: FLO
-  difficulty: Expert
+  finalTimeStr: 02:53
+  playerName: FAROW
+  difficulty: Hard
+  finalTime: 0
 --- !u!4 &121555604
 Transform:
   m_ObjectHideFlags: 0

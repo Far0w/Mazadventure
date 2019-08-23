@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5962508940519865344}
   - component: {fileID: 8392991504860031058}
   m_Layer: 0
-  m_Name: collider_next
-  m_TagString: Untagged
+  m_Name: collider_previous
+  m_TagString: leaderboard_collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3394819733913817405}
   m_LocalRotation: {x: -0, y: -0.36066434, z: -0, w: 0.9326957}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -86, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
   - {fileID: 5336728287174940564}
@@ -725,8 +725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 700, y: 650}
+  m_AnchoredPosition: {x: 0, y: 17}
+  m_SizeDelta: {x: 700, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5336728288267952743
 CanvasRenderer:
@@ -758,17 +758,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1e658dd3aa0c6a14ea84e14a78d6cb2b, type: 3}
-    m_FontSize: 45
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 45
+    m_MaxSize: 55
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 4
+    m_LineSpacing: 4.2
   m_Text: 
 --- !u!1 &5336728288418044976
 GameObject:
@@ -874,7 +874,7 @@ RectTransform:
   m_GameObject: {fileID: 5336728288631074763}
   m_LocalRotation: {x: 0, y: 0.36066434, z: 0, w: 0.9326957}
   m_LocalPosition: {x: 0, y: 0, z: 3.8}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.005, y: 0.0045, z: 0.005}
   m_Children:
   - {fileID: 7725224921657902849}
   - {fileID: 5336728287135831329}
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5336728288267952740}
   pageText: {fileID: 5336728287174940567}
-  leaderboardDifficulty: 
+  leaderboardDifficulty: Expert
 --- !u!1 &6194389642166954785
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194389642166954785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5962508940519865344}
@@ -1008,8 +1008,8 @@ GameObject:
   - component: {fileID: 5808448043071766027}
   - component: {fileID: 662669733612000752}
   m_Layer: 0
-  m_Name: collider_previous
-  m_TagString: Untagged
+  m_Name: collider_next
+  m_TagString: leaderboard_collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

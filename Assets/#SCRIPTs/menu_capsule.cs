@@ -7,7 +7,7 @@ public class menu_capsule : MonoBehaviour
 {
     //The capsule that sends datas from the menu to the game
     public string playerName = "";
-    public Text debugText5;
+    //public Text debugText5;
 
     public string difficulty;
 
@@ -19,7 +19,7 @@ public class menu_capsule : MonoBehaviour
     public void updatePlayerName(string pName)
     {
         playerName = pName;
-        debugText5.text = "menu_capsule : playerName updated to " + pName;
+        //debugText5.text = "menu_capsule : playerName updated to " + pName;
     }
 
 

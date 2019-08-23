@@ -10,10 +10,10 @@ public class pointer_script : MonoBehaviour
     public GameObject dot;
     public GameObject menuManager;
     public keyboard_script keyboard;
-    public leaderboard leaderboardManager;
+    public leaderboardsManager lbManager; // Manager qui s'occupe des leaderboards (choix du leaderboard de difficulté X)
 
 
-    public Text debugText3;
+    //public Text debugText3;
 
     private LineRenderer lineRenderer = null;
     private bool isKeyboardOpen = true;
@@ -24,7 +24,7 @@ public class pointer_script : MonoBehaviour
     private void Awake()
     {
         lineRenderer = transform.GetComponent<LineRenderer>();
-        debugText3.text = "Pointer Init";
+        //debugText3.text = "Pointer Init";
     }
 
 
@@ -65,7 +65,7 @@ public class pointer_script : MonoBehaviour
             if (hit.collider.gameObject.name.Contains("_c")) // If the collider belong to the keyboard
             {
                 //print("pointer on key" + hit.collider.gameObject.name);
-                if (hit.collider.gameObject.name.Length == 3)
+                if (hit.collider.gameObject.name.Length == 3) // touche de clavier classique (lettre, nombres ou _)
                 {
 
                     keyboard.onKey(hit.collider.gameObject.name[0].ToString());
@@ -82,7 +82,7 @@ public class pointer_script : MonoBehaviour
             if (Input.GetAxis("Oculus_CrossPlatform_SecondaryIndexTrigger") > 0f)
 
             {
-                debugText3.text = "Button action0";
+                //debugText3.text = "Button action0";
 
                 if (hit.collider.transform.tag == "field")
                 {
@@ -110,13 +110,17 @@ public class pointer_script : MonoBehaviour
                             keyboard.clickOnKey(splittedKeyName[0]);
                         }
                     }
-                    else if (hit.collider.tag == "leaderboard_collider")
+                    else if (hit.collider.tag == "leaderboard_collider") // colliders for pages switching
                     {
-                        leaderboardManager.changePage(hit.collider.name);
+                        lbManager.changePage(hit.collider.name);
+                    }
+                    else if (hit.collider.name.Contains("collider_diff_")) // colliders for difficulties showed by the leaderboard
+                    {
+                        lbManager.loadNewLeaderboard(hit.collider.name);
                     }
                     else // Sinon c'est un bouton du menu
                     {
-                        debugText3.text = "Button action1";
+                        //debugText3.text = "Button action1";
                         menuManager.SendMessage("receiveData", hit.collider.gameObject.name);
                         //menuManager.receiveData(hit.collider.gameObject, "click");
                     }
@@ -126,7 +130,7 @@ public class pointer_script : MonoBehaviour
             else if (lastState && Input.GetAxis("Oculus_CrossPlatform_SecondaryIndexTrigger") == 0)
             {
                 lastState = false;
-                debugText3.text = "Button Released";
+                //debugText3.text = "Button Released";
             }
         }
         else if (lastState) // Si le pointeur vient de sortir du bloc après avoir cliqué

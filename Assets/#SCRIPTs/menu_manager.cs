@@ -21,8 +21,8 @@ public class menu_manager : MonoBehaviour
 
     public menu_capsule levelSelector; // GO donc le but est de savoir quel nv choisi par l'utilisateur pour permettre la génération de labyrinthe adaptée 
 
-    public Text debugText1;
-    public Text debugText2;
+    //public Text debugText1;
+    //public Text debugText2;
 
     public int currentScene = 0;
     private int lastScene   = 0; // Pour détecter si changement
@@ -37,7 +37,7 @@ public class menu_manager : MonoBehaviour
     {
         isLevelSelected = false;
         changePage("baseMenu");
-        debugText2.text = "MenuManager Init";
+        //debugText2.text = "MenuManager Init";
     }
 
     private void Update()
@@ -52,7 +52,7 @@ public class menu_manager : MonoBehaviour
     public void receiveData( string button ) 
         // actions possibles : "hover", "click"
     {
-        debugText2.text = "CLOK";  
+        //debugText2.text = "CLOK";  
         if (button.StartsWith("selectLevel")){
             string levelReceived = (button.Substring(11)).ToLower(); // Enlève "selectLevel" puis met en minuscule
             levelSelector.difficulty = levelReceived;
@@ -89,7 +89,7 @@ public class menu_manager : MonoBehaviour
         currentCanva.SetActive(true);
         currentCollider = collidersList[stringSceneToIntScene(newPage)];
         currentCollider.SetActive(true);
-        debugText1.text = newPage;
+        //debugText1.text = newPage;
     }
 
 
