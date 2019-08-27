@@ -31,6 +31,7 @@ success_script.cs
 *.user
 *.userprefs
 *.pidb
+.vs
 .DS_Store
 
 ###
